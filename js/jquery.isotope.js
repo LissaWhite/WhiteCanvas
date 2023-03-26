@@ -1,16 +1,3 @@
-/**
- * Isotope v1.5.25
- * An exquisite jQuery plugin for magical layouts
- * http://isotope.metafizzy.co
- *
- * Commercial use requires one-time license fee
- * http://metafizzy.co/#licenses
- *
- * Copyright 2012 David DeSandro / Metafizzy
- */
-
-/*jshint asi: true, browser: true, curly: true, eqeqeq: true, forin: false, immed: false, newcap: true, noempty: true, strict: true, undef: true */
-/*global jQuery: false */
 
 (function( window, $, undefined ){
 
@@ -24,9 +11,6 @@
   var capitalize = function( str ) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
-
-  // ========================= getStyleProperty by kangax ===============================
-  // http://perfectionkills.com/feature-testing-css-properties/
 
   var prefixes = 'Moz Webkit O Ms'.split(' ');
 
@@ -54,27 +38,6 @@
   var transformProp = getStyleProperty('transform'),
       transitionProp = getStyleProperty('transitionProperty');
 
-
-  // ========================= miniModernizr ===============================
-  // <3<3<3 and thanks to Faruk and Paul for doing the heavy lifting
-
-  /*!
-   * Modernizr v1.6ish: miniModernizr for Isotope
-   * http://www.modernizr.com
-   *
-   * Developed by:
-   * - Faruk Ates  http://farukat.es/
-   * - Paul Irish  http://paulirish.com/
-   *
-   * Copyright (c) 2009-2010
-   * Dual-licensed under the BSD or MIT licenses.
-   * http://www.modernizr.com/license/
-   */
-
-  /*
-   * This version whittles down the script just to check support for
-   * CSS transitions, transforms, and 3D transforms.
-  */
 
   var tests = {
     csstransforms: function() {
@@ -135,15 +98,6 @@
   }
 
 
-  // ========================= isoTransform ===============================
-
-  /**
-   *  provides hooks for .css({ scale: value, translate: [x, y] })
-   *  Progressively enhanced CSS transforms
-   *  Uses hardware accelerated 3D transforms for Safari
-   *  or falls back to 2D transforms.
-   */
-
   if ( Modernizr.csstransforms ) {
 
         // i.e. transformFnNotations.scale(0.5) >> 'scale3d( 0.5, 0.5, 1)'
@@ -184,9 +138,7 @@
         transformObj[ fnName ] = transformFnNotations[ fnName ]( transformValue );
       }
 
-      // get proper order
-      // ideally, we could loop through this give an array, but since we only have
-      // a couple transforms we're keeping track of, we'll do it like so
+  
       var translateFn = transformObj.translate || '',
           scaleFn = transformObj.scale || '',
           // sorting so translate always comes first
@@ -205,10 +157,7 @@
 
     $.cssHooks.scale = {
       set: function( elem, value ) {
-        // uncomment this bit if you want to properly parse strings
-        // if ( typeof value === 'string' ) {
-        //   value = parseFloat( value );
-        // }
+
         setIsoTransform( elem, 'scale', value );
       },
       get: function( elem, computed ) {
@@ -228,20 +177,6 @@
 
     $.cssHooks.translate = {
       set: function( elem, value ) {
-
-        // uncomment this bit if you want to properly parse strings
-        // if ( typeof value === 'string' ) {
-        //   value = value.split(' ');
-        // }
-        //
-        // var i, val;
-        // for ( i = 0; i < 2; i++ ) {
-        //   val = value[i];
-        //   if ( typeof val === 'string' ) {
-        //     val = parseInt( val );
-        //   }
-        // }
-
         setIsoTransform( elem, 'translate', value );
       },
 
@@ -267,17 +202,6 @@
     transitionDurProp = getStyleProperty('transitionDuration');
   }
 
-  // ========================= smartresize ===============================
-
-  /*
-   * smartresize: debounced resize event for jQuery
-   *
-   * latest version and complete README available on Github:
-   * https://github.com/louisremi/jquery.smartresize.js
-   *
-   * Copyright 2011 @louis_remi
-   * Licensed under the MIT license.
-   */
 
   var $event = $.event,
       dispatchMethod = $.event.handle ? 'handle' : 'dispatch',
@@ -309,9 +233,6 @@
     return fn ? this.bind( "smartresize", fn ) : this.trigger( "smartresize", ["execAsap"] );
   };
 
-
-
-// ========================= Isotope ===============================
 
 
   // our "Widget" object constructor
@@ -445,10 +366,7 @@
       return $atoms;
     },
 
-    // _init fires when your instance is first created
-    // (from the constructor above), and when you
-    // attempt to initialize the widget again (by the bridge)
-    // after it has already been initialized.
+
     _init : function( callback ) {
 
       this.$filteredAtoms = this._filter( this.$allAtoms );
@@ -474,8 +392,7 @@
       }
     },
 
-    // ====================== updaters ====================== //
-    // kind of like setters
+
 
     _updateAnimationEngine : function() {
       var animationEngine = this.options.animationEngine.toLowerCase().replace( /[ _\-]/g, '');
@@ -610,8 +527,7 @@
 
     // ====================== General Layout ======================
 
-    // used on collection of atoms (should be filtered, and sorted before )
-    // accepts atoms-to-be-laid-out to start with
+
     layout : function( $elems, callback ) {
 
       var layoutMode = this.options.layoutMode;
@@ -751,8 +667,7 @@
       }
     },
 
-    // convienence method for adding elements properly to any layout
-    // positions items, hides them, then animates them back in <--- very sezzy
+
     insert : function( $content, callback ) {
       // position items
       this.element.append( $content );
@@ -879,9 +794,7 @@
 
     // ====================== LAYOUTS ======================
 
-    // calculates number of rows or columns
-    // requires columnWidth or rowHeight to be set on namespaced object
-    // i.e. this.masonry.columnWidth = 200
+
     _getSegments : function( isRows ) {
       var namespace = this.options.layoutMode,
           measure  = isRows ? 'rowHeight' : 'columnWidth',
