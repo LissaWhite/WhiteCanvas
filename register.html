@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WhiteCanvas</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+<!-- Slider
+    ================================================== -->
+<link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+<link href="css/owl.theme.css" rel="stylesheet" media="screen">
+
+<!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+    <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style-register.css">
+
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container"> 
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand page-scroll" href="index.html#page-top">БЕЛЫЙ ХОЛСТ</a> </div>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html#about" class="page-scroll">О нас</a></li>
+        <li><a href="index.html#services" class="page-scroll">Услуги</a></li>
+        <li><a href="index.html#portfolio" class="page-scroll">Проекты</a></li>
+        <li><a href="index.html#testimonials" class="page-scroll">Отзывы</a></li>
+        <li><a href="index.html#contact" class="page-scroll">Контакты</a></li>
+        <li><a href="register.html">Регистрация/Вход</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body>
+  <header id="header">
+    <div class="intro">
+      <div class="overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 intro-text">
+              <div class="form">
+                <ul class="tab-group">
+                  <li class="tab active"><a href="#signup">Регистрация</a></li>
+                  <li class="tab"><a href="#login">Вход</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="signup">   
+                    <h1>Регистрация</h1>
+                    
+                    <form id="register-form" action="/" method="post">
+                    
+                    <div class="top-row">
+                      <div class="field-wrap">
+                        <label>
+                          Имя<span class="req">*</span>
+                        </label>
+                        <input type="text" required autocomplete="off">
+                      </div>
+                  
+                      <div class="field-wrap">
+                        <label>
+                          Фамилия<span class="req">*</span>
+                        </label>
+                        <input type="text" required autocomplete="off">
+                      </div>
+                    </div>
+          
+                    <div class="field-wrap">
+                      <label>
+                        Электронная почта<span class="req">*</span>
+                      </label>
+                      <input type="email" required autocomplete="off">
+                    </div>
+                    
+                    <div class="field-wrap">
+                      <label>
+                        Пароль<span class="req">*</span>
+                      </label>
+                      <input type="password" required autocomplete="off">
+                    </div>
+                    
+                    <button type="submit" class="button button-block reg-button">Создать</button>
+                    
+                    </form>
+          
+                  </div>
+                  
+                  <div id="login">   
+                    <h1>Вход</h1>
+                    
+                    <form id="login-form" action="/" method="post">
+                    
+                      <div class="field-wrap">
+                      <label>
+                        Электронная почта<span class="req">*</span>
+                      </label>
+                      <input type="email" required autocomplete="off">
+                    </div>
+                    
+                    <div class="field-wrap">
+                      <label>
+                        Пароль<span class="req">*</span>
+                      </label>
+                      <input type="password" required autocomplete="off">
+                    </div>
+                    <p class="forgot"><a href="#">Забыли пароль?</a></p>
+                    <button class="button button-block log-button">Вход</button>
+                    </form>
+                  </div>
+                </div><!-- tab-content -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/register.js"></script>
+  </header>  
+  
+</body>
+</html>
