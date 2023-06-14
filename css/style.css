@@ -204,8 +204,6 @@ hr {
     color: #666;
 }
 .btn-custom {
-    display: block;
-    margin:0 auto;
     text-transform: uppercase;
     color: #fff;
     background-color: #444444;
