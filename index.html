@@ -34,11 +34,22 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about" class="page-scroll">О нас</a></li>
-        <li><a href="#services" class="page-scroll">Услуги</a></li>
-        <li><a href="#portfolio" class="page-scroll">Проекты</a></li>
+        <li><a href="service.html" class="page-scroll">Услуги</a></li>
+        <li><a href="product.html" class="page-scroll">Товары</a></li>
         <li><a href="#testimonials" class="page-scroll">Отзывы</a></li>
         <li><a href="#contact" class="page-scroll">Контакты</a></li>
-        <li><a href="register.html">Регистрация/Вход</a></li>
+        <li><a href="basket.html" class="page-scroll">Корзина</a></li>
+        <li class="register-box">
+          <a href="register.html" class="register-btn">Регистрация/Вход</a>
+          <span class="dropdown-wrapper">
+            <div class="dropdown">
+              <button class="dropbtn">Пользователь</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a class="dropdown-item logout" href="#">Выйти</a>
+              </div>
+            </div>
+          </span>
+        </li>
       </ul>
     </div>
   </div>
@@ -126,7 +137,9 @@
         </div>
       </div>
     </div>
+    <a href="#about" class="btn btn-custom btn-lg page-scroll">Наши услуги</a>
   </div>
+
 </div>
 <!-- Gallery Section -->
 <div id="portfolio">
@@ -150,7 +163,7 @@
       <div class="clearfix"></div>
     </div>
     <div class="row">
-      <div class="portfolio-items">
+      <div class="portfolio-items ">
         <div class="col-sm-6 col-md-4 modern">
           <div class="portfolio-item">
             <div class="hover-bg"> <a href="img/portfolio/01-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
@@ -343,12 +356,12 @@
 </div>
 <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
 <script type="text/javascript" src="js/bootstrap.js"></script> 
-<script type="text/javascript" src="js/SmoothScroll.js"></script> 
-<script type="text/javascript" src="js/nivo-lightbox.js"></script> 
 <script type="text/javascript" src="js/jquery.isotope.js"></script> 
+<script type="text/javascript" src="js/nivo-lightbox.js"></script> 
 <script type="text/javascript" src="js/owl.carousel.js"></script> 
-<!-- <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>  -->
-<script type="text/javascript" src="js/contact_me.js"></script> 
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/SmoothScroll.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
 </body>
 </html>
