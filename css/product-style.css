@@ -66,3 +66,16 @@
     transition: .3s;
     letter-spacing: 1px;
 }
+.product-item{
+    display: flex;
+    
+}
+.product-item h4{
+    margin-right: 10px;
+}
+.product-item p{
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    margin: 7px 0;
+}

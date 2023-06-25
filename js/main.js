@@ -123,11 +123,12 @@ function main() {
                             <div class="portfolio-item ${product.product_id}">
                                 <div class="hover-bg"> 
                                     <a href=${product.product_img} title="Project Title" data-lightbox-gallery="gallery1">
-                                        <div class="hover-text">
-                                            <h4>${product.product_title}<br><b>${product.product_price}}р.</b></h4>
-                                        </div>
-                                        <img src=${product.product_img} width="360px" height="240px" class="img-responsive" alt="Project Title"> 
-                                    </a>
+                                        <div class="hover-text"></div>
+                                        <img src=${product.product_img} width="360px" height="240px" class="img-responsive" alt="Project Title"></a>
+                                </div>
+                                <div class="product-item">
+                                        <h4>${product.product_title}</h4>
+                                        <p><b>${product.product_price}р.</b></p>
                                 </div>
                                 <button class="item-btn" id=${product.product_id}><span class="link-content">Добавить</span></button>
                             </div>
@@ -171,7 +172,7 @@ function main() {
                 service_style: "modern",
                 service_img: "img/portfolio/01-large.jpg",
                 service_title: "Дизайн-проект",
-                service_price: "3500",
+                service_price: "35000",
             },
             {
                 service_id: "7l956",
@@ -221,13 +222,16 @@ function main() {
             json_service_bd.forEach((service) => {
                 const service_templ = `<div class="col-sm-6 col-md-4 ${service.service_style}">
                                         <div class="portfolio-item ${service.service_id}">
-                                          <div class="hover-bg"> <a href="${service.service_img}" title="Project Title" data-lightbox-gallery="gallery1">
-                                            <div class="hover-text">
-                                              <h4>${service.service_title}<br><b>${service.service_price}р.</b></h4>
+                                            <div class="hover-bg"> 
+                                                <a href="${service.service_img}" title="Project Title" data-lightbox-gallery="gallery1">
+                                                <div class="hover-text"></div>
+                                                <img src="${service.service_img}" class="img-responsive" alt="Project Title"> </a>
                                             </div>
-                                            <img src="${service.service_img}" class="img-responsive" alt="Project Title"> </a>
-                                          </div>
-                                          <button class="item-btn" id=${service.service_id}><span class="link-content">Добавить</span></button>
+                                            <div class="product-item">
+                                                <h4>${service.service_title}</h4>
+                                                <p><b>${service.service_price}р.</b></p>
+                                            </div>
+                                            <button class="item-btn" id=${service.service_id}><span class="link-content">Добавить</span></button>
                                         </div>
                                       </div>`;
 
@@ -235,7 +239,7 @@ function main() {
             });
             service_list.addEventListener("click", (event) => {
                 event.preventDefault();
-                
+
                 if (currentUser) {
                     if (
                         event.target.tagName === "SPAN" ||
@@ -263,6 +267,27 @@ function main() {
 
         // Basket page
         const basket_list = document.querySelector(".basket-list");
+        const orderBtn = document.querySelector(".order-btn");
+        const closeBtn = document.querySelector(".btn-close");
+        const orderPopUp = document.querySelector(".order-popUp");
+        const totalSum = document.querySelector(".total-sum");
+        const orderMail = document.querySelector(".user-name");
+        const total_price = document.querySelector("#total-price");
+
+        closeBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            orderPopUp.style.display = "none";
+        });
+        orderBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (currentUser) {
+                orderMail.textContent = currentUser.email;
+                orderPopUp.style.display = "flex";
+                totalSum.textContent = total_price.textContent;
+            }
+        });
+
         function basket_render(basket_products, basket_services) {
             const avalible_services = json_service_bd.filter((item) => {
                 return basket_services.includes(item.service_id);
@@ -272,8 +297,7 @@ function main() {
 
             avalible_services.forEach((value, key) => {
                 const basket_product_templ = `<li class="basket-item">
-                                              <div class="portfolio-item ${value.service_id}
-            ">
+                                              <div class="portfolio-item ${value.service_id}">
                                               <img src="${value.service_img}" class="img-responsive" alt="Project Title">
                                               <h4 class="item-title">${value.service_title}</h4>
                                               <p class="total">${value.service_price}р.</p>

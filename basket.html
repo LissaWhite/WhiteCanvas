@@ -42,8 +42,10 @@
           <a href="register.html" class="register-btn">Регистрация/Вход</a>
           <span class="dropdown-wrapper">
             <div class="dropdown">
-              <button class="dropbtn">Пользователь</button>
+              <button class="dropbtn">Хуйло</button>
               <div id="myDropdown" class="dropdown-content">
+                <a class="dropdown-item" href="#">Профиль</a>
+                <a class="dropdown-item" href="#">Настройки</a>
                 <a class="dropdown-item logout" href="#">Выйти</a>
               </div>
             </div>
@@ -81,6 +83,81 @@
             </div>
         </div>
     </div>
+</div>
+<div class="order-popUp">
+  <div class="order-wrapper">
+    <div class="order-inner">
+      <div class="order-title">Данные заказчика</div>
+      <div class="btn-close">
+        <div>
+          <span class="right-stick"></span>
+          <span class="left-stick"></span>
+        </div>
+      </div>
+      <div class="order-total">
+        <div class="total-wrapper">
+          <p class="total-title">Сумма к оплате</p>
+          <p class="total-sum">25247</p>
+        </div>
+        <div class="order-user">
+          <p class="user-title">Заказчик</p>
+          <p class="user-name">trudyga@mail.com</p>
+        </div>
+        <div class="address">
+          <label class="address-label">Укажите адрес доставки</label>
+          <input type="text" class="input-address input-active">
+        </div>
+      </div>
+      <div class="delivery-wrapper">
+        <div class="delivery-title">Способы доставки и оплаты</div>
+        <div class="delivery-inner">
+          <div class="checkbox-btn">
+            <input type="checkbox">
+            <span>Самовывоз</span>
+          </div>
+          <div class="checkbox-btn">
+            <input type="checkbox">
+            <span>Доставка на дом</span>
+          </div>
+          <div class="checkbox-btn">
+            <input type="checkbox">
+            <span>Наличными</span>
+          </div>
+          <div class="checkbox-btn">
+            <input type="checkbox">
+            <span>Безналичный расчет</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-wrapper">
+        <form method="post" action="" class="order-form">
+          <div class="form-el-1 form-input">
+            <label class="label-input-card">Номер карты</label>
+            <input class="num-card input-active" type="text" placeholder="Номер банковской карты" required value="" name="num-card">
+          </div>
+          <div class="form-el-2 form-input">
+            <label class="label-input-card">Срок действия</label>
+            <input class="exp-date input-active" type="text" placeholder="ММ/ГГ" maxlength="5" required value="" name="exp-date">
+          </div>
+          <div class="form-el-3 form-input">
+            <label class="label-input-card">CVV/CVC</label>
+            <input class="code input-active" type="text" placeholder="Код из 3-4 цифр" maxlength="4" required value="" name="code">
+          </div>
+          <div class="form-el-4 form-input">
+            <label class="label-input-card">Имя владельца карты</label>
+            <input class="card-name input-active" type="text" placeholder="Имя и фамилия" required value="" name="name">
+          </div>
+          <div class="data-save">
+            <input type="checkbox">
+            <span class="data-save-text">Сохранение данных карты для будущих платежей</span>
+          </div>
+        </form>
+      </div>
+      <div class="order-pay-btn">
+        <button class="pay-btn">Оплатить</button>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Contact Section -->
 <div id="contact" class="text-center">
