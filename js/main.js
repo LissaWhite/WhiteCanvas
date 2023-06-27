@@ -172,7 +172,7 @@ function main() {
                 service_style: "modern",
                 service_img: "img/portfolio/01-large.jpg",
                 service_title: "Дизайн-проект",
-                service_price: "35000",
+                service_price: "3500",
             },
             {
                 service_id: "7l956",
@@ -274,19 +274,21 @@ function main() {
         const orderMail = document.querySelector(".user-name");
         const total_price = document.querySelector("#total-price");
 
-        closeBtn.addEventListener("click", (event) => {
-            event.preventDefault();
+        if (basket_list) {
+            closeBtn.addEventListener("click", (event) => {
+                event.preventDefault();
 
-            orderPopUp.style.display = "none";
-        });
-        orderBtn.addEventListener("click", (event) => {
-            event.preventDefault();
-            if (currentUser) {
-                orderMail.textContent = currentUser.email;
-                orderPopUp.style.display = "flex";
-                totalSum.textContent = total_price.textContent;
-            }
-        });
+                orderPopUp.style.display = "none";
+            });
+            orderBtn.addEventListener("click", (event) => {
+                event.preventDefault();
+                if (currentUser) {
+                    orderMail.textContent = currentUser.email;
+                    orderPopUp.style.display = "flex";
+                    totalSum.textContent = total_price.textContent;
+                }
+            });
+        }
 
         function basket_render(basket_products, basket_services) {
             const avalible_services = json_service_bd.filter((item) => {
